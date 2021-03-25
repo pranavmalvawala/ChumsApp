@@ -41,6 +41,4 @@ jobs:
         working-directory: ~/ChumsTests
         uses: cypress-io/github-action@v2
         with:
-          start: npm run test
-          wait-on: 'http://localhost:3101'
           spec: cypress/integration/*.spec.js 
