@@ -33,14 +33,14 @@ jobs:
         working-directory: ~/ChumsApp
         run: npm install
 
-      - name: Copy .env
+      - name: Copy ChumsApp .env
         working-directory: ~/ChumsApp
         run: cp dotenv.sample.txt .env
   
-      - name: Install Test Project
+      - name: Cypress run
         working-directory: ~/ChumsTests
-        run: npm install
-          
-      - name: Run Tests
-        working-directory: ~/ChumsTests
-        run: npm test
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run test
+          wait-on: 'http://localhost:3101'
+          spec: cypress/integration/*.spec.js 
