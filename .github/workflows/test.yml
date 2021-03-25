@@ -42,7 +42,7 @@ jobs:
         with:
           working-directory: ~/ChumsTests
           start: |
-            cd ~/ChumsApp
+            cd ~/ChumsApp &&
             npm start
           wait-on: 'http://localhost:3101'
           spec: cypress/integration/*.spec.js
