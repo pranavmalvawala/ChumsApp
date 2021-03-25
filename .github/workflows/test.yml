@@ -44,10 +44,6 @@ jobs:
         working-directory: ~/ChumsTests
         run: npm install
           
-      - name: Copy .env
-        working-directory: ~/ChumsTests
-        run: cp cypress.env.json.template cypress.env.json
-
       - name: Run Tests
         working-directory: ~/ChumsTests
         run: npm test
