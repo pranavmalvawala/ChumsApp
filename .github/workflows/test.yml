@@ -40,4 +40,5 @@ jobs:
       - name: Cypress run with env
         uses: cypress-io/github-action@v2
         with:
-          spec: cypress/integration/*.spec.js 
+          spec: cypress/integration/*.spec.js
+          working-directory: ~/ChumsTests 
