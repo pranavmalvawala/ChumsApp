@@ -19,7 +19,7 @@ jobs:
       - name: Checkout Tests
         uses: actions/checkout@v2
         with:
-          repository: LiveChurchSolutions/ChumsTests
+          repository: pranavmalvawala/ChumsTests
           path: ~/ChumsTests
 
       - uses: actions/cache@v2
@@ -41,9 +41,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           working-directory: ~/ChumsTests
-          start: |
-            cd ~/ChumsApp
-            npm start
+          start: cd ../ChumsApp && npm start
           wait-on: 'http://localhost:3101'
           spec: cypress/integration/*.spec.js
           record: true
